@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All — Aroma Conductor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream: #ecdfc9;
+  --cream-deep: #e4d3b8;
+  --stone: #c7cacb;
+  --ink: #1c1a17;
+  --ink-soft: #3a362f;
+  --line: rgba(28,26,23,0.15);
+  --accent: #e8862f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.55;
+}
+h1,h2,h3,.display{
+  font-family:'Poppins', sans-serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+a{color:inherit; text-decoration:none;}
+img,svg{display:block; max-width:100%;}
+
+/* NAV */
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:28px 48px;
+}
+.brand{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.3rem; letter-spacing:-0.01em;}
+.nav-links{display:flex; gap:36px; font-size:1rem;}
+.nav-links a{position:relative; padding-bottom:2px;}
+.nav-links a:hover{border-bottom:1px solid var(--ink);}
+.nav-links a.active{border-bottom:1px solid var(--ink);}
+.nav-cart{font-size:1rem;}
+
+/* HERO */
+.hero{padding:20px 48px 0; position:relative; overflow:hidden;}
+.hero h1{
+  font-size:clamp(2.6rem, 7vw, 5.6rem);
+  line-height:1.02;
+  text-align:center;
+  margin:20px 0 28px;
+}
+.hero-copy{
+  max-width:520px; margin:0 auto 40px; text-align:center;
+  font-size:1.15rem; color:var(--ink-soft);
+}
+
+/* FEATURED / BESTSELLER */
+.featured{
+  padding:20px 48px 90px;
+  max-width:1200px; margin:0 auto;
+}
+.featured-badge{
+  display:inline-block; background:var(--ink); color:var(--cream);
+  font-family:'Poppins',sans-serif; font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase;
+  padding:8px 16px; border-radius:999px; margin-bottom:28px;
+}
+.featured-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+}
+.featured-visual{display:flex; align-items:center; justify-content:center;}
+.featured-info .product-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:2rem; margin-bottom:6px;}
+.featured-info .product-meta{color:var(--ink-soft); margin-bottom:2px;}
+.featured-info .product-price{font-size:1.2rem; margin-top:8px; margin-bottom:24px;}
+.featured-info .product-desc{color:var(--ink-soft); margin-bottom:28px; max-width:440px;}
+
+.add-cart{
+  background:var(--ink); color:var(--cream);
+  border:none; border-radius:999px;
+  padding:16px 0; width:100%; max-width:300px;
+  font-family:'Inter', sans-serif; font-weight:600; font-size:1rem; letter-spacing:0.01em;
+  cursor:pointer; transition:transform .15s ease, opacity .15s ease;
+}
+.add-cart:hover{opacity:0.85; transform:translateY(-1px);}
+.add-cart.small{padding:12px 0; font-size:0.92rem; max-width:100%;}
+
+.notes-row{
+  display:flex; gap:48px; margin-top:32px; flex-wrap:wrap;
+}
+.layer-label{
+  font-family:'Poppins',sans-serif; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.layer-items{font-size:1rem;}
+
+/* SHOP LINK STRIP */
+.shop-cta{
+  text-align:center; padding:0 48px 90px;
+}
+.shop-cta a{
+  display:inline-block; border:1.5px solid var(--ink); border-radius:999px;
+  padding:14px 32px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.95rem;
+  transition:background .15s ease, color .15s ease;
+}
+.shop-cta a:hover{background:var(--ink); color:var(--cream);}
+
+/* ABOUT */
+.about{
+  background:var(--stone);
+  padding:90px 48px;
+  display:grid; grid-template-columns:0.9fr 1fr 1fr; gap:56px;
+  align-items:start;
+}
+.about h2{font-size:clamp(2rem, 3.6vw, 2.8rem); line-height:1.1;}
+.about p{font-size:1.05rem; color:var(--ink-soft); margin-bottom:14px;}
+.about a.learn-more{text-decoration:underline; color:var(--ink);}
+
+/* FOOTER */
+.footer{
+  background:var(--cream-deep);
+  padding:56px 48px;
+  display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
+  border-top:1px solid var(--line);
+}
+.footer .brand{font-size:1.4rem;}
+.footer-contact{text-align:right; font-size:1rem;}
+.footer-contact div{display:flex; align-items:center; gap:10px; justify-content:flex-end; margin-bottom:8px;}
+
+/* PRODUCTS GRID PAGE */
+.page-header{padding:60px 48px 20px; text-align:center;}
+.page-header h1{font-size:clamp(2.2rem, 5vw, 3.4rem); margin-bottom:14px;}
+.page-header p{color:var(--ink-soft); font-size:1.1rem; max-width:480px; margin:0 auto;}
+
+.products-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:36px;
+  max-width:1100px; margin:0 auto; padding:50px 48px 100px;
+}
+.product-card{
+  background:var(--cream-deep); border-radius:20px; padding:32px;
+  display:flex; flex-direction:column;
+}
+.product-card .card-visual{
+  height:200px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+}
+.product-card .product-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.25rem; margin-bottom:4px;}
+.product-card .product-meta{color:var(--ink-soft); font-size:0.95rem; margin-bottom:2px;}
+.product-card .product-price{font-size:1.05rem; margin:8px 0 14px;}
+.product-card .notes-row{gap:24px; margin-top:0; margin-bottom:20px; font-size:0.9rem;}
+
+@media (max-width:860px){
+  .nav{padding:22px 24px;}
+  .nav-links{gap:18px; font-size:0.9rem;}
+  .hero{padding:16px 24px 0;}
+  .featured{padding:10px 24px 60px;}
+  .featured-grid{grid-template-columns:1fr;}
+  .about{grid-template-columns:1fr; padding:60px 24px; gap:32px;}
+  .footer{padding:40px 24px; flex-direction:column; align-items:flex-start;}
+  .footer-contact{text-align:left;}
+  .footer-contact div{justify-content:flex-start;}
+  .products-grid{grid-template-columns:1fr; padding:40px 24px 70px;}
+  .page-header{padding:44px 24px 10px;}
+}
+
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="brand">Aroma Conductor</div>
+    <div class="nav-links">
+      <a href="products.html" class="active">Shop</a>
+      <a href="index.html#about">About</a>
+    </div>
+    <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
+  </nav>
+
+  <div class="page-header">
+    <h1>The Full Collection</h1>
+    <p>Five compositions, one philosophy: scent that moves with you. Each bottle is 100ML unless noted.</p>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- Crescendo -->
+    <div class="product-card">
+      <div class="card-visual">
+        <svg viewBox="0 0 260 220" width="80%">
+          <circle cx="130" cy="110" r="105" fill="#fdf1e0" opacity="0.5"/>
+          <g fill="#f2b23c" opacity="0.35">
+            <circle cx="30" cy="40" r="3.5"/>
+            <circle cx="230" cy="35" r="3"/>
+            <circle cx="20" cy="170" r="4"/>
+            <circle cx="235" cy="180" r="3.5"/>
+          </g>
+          <path d="M10 130 Q30 110 18 85" fill="none" stroke="#ef8a2e" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+          <path d="M245 70 Q225 90 238 115" fill="none" stroke="#f2b23c" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+          <circle cx="80" cy="80" r="48" fill="#f5a641" stroke="#c9711d" stroke-width="3"/>
+          <path d="M52 58 A46 46 0 0 1 88 43" fill="none" stroke="#fbcf8f" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+
+          <circle cx="150" cy="60" r="38" fill="#f7cd6a" stroke="#c9971f" stroke-width="3"/>
+          <path d="M128 42 A36 36 0 0 1 158 32" fill="none" stroke="#fbe6ab" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+
+          <rect x="58" y="138" width="66" height="42" rx="6" fill="#a8794f" stroke="#6e4a2b" stroke-width="2.5" transform="rotate(-8 91 159)"/>
+          <path d="M65 146 L118 156" stroke="#6e4a2b" stroke-width="1.5" opacity="0.5" transform="rotate(-8 91 159)"/>
+
+          <ellipse cx="180" cy="150" rx="22" ry="17" fill="#e0895a" stroke="#a04a1e" stroke-width="2.5"/>
+          <ellipse cx="180" cy="150" rx="10" ry="7" fill="#f2b98d" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="product-name">Aroma Conductor: Crescendo EDP</div>
+      <div class="product-meta">100ML</div>
+      <div class="product-price">$50.00</div>
+      <div class="notes-row">
+        <div>
+          <div class="layer-label">Top</div>
+          <div class="layer-items">Blood Orange · Ginger</div>
+        </div>
+        <div>
+          <div class="layer-label">Mid</div>
+          <div class="layer-items">Cinnamon · Saffron</div>
+        </div>
+        <div>
+          <div class="layer-label">Base</div>
+          <div class="layer-items">Cedarwood · Tonka Bean</div>
+        </div>
+      </div>
+      <button class="add-cart small" onclick="addToCart('crescendo-edp-100ml', 'Aroma Conductor: Crescendo EDP', 5000, '100ML')">Add to Cart</button>
+    </div>
+
+    <!-- Nocturne -->
+    <div class="product-card">
+      <div class="card-visual">
+        <svg viewBox="0 0 260 220" width="80%">
+          <circle cx="140" cy="110" r="105" fill="#efe9e0" opacity="0.5"/>
+          <g fill="#8b6fb5" opacity="0.3">
+            <circle cx="35" cy="45" r="3.5"/>
+            <circle cx="225" cy="40" r="3"/>
+            <circle cx="20" cy="175" r="4"/>
+          </g>
+          <path d="M12 120 Q32 100 22 75" fill="none" stroke="#7a624a" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+          <path d="M245 150 Q225 130 235 105" fill="none" stroke="#5c4a30" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+          <circle cx="100" cy="90" r="55" fill="#4a3f2e" stroke="#221c14" stroke-width="3"/>
+          <path d="M68 65 A50 50 0 0 1 108 50" fill="none" stroke="#786248" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+
+          <circle cx="170" cy="70" r="34" fill="#6b5a3e" stroke="#382c1c" stroke-width="3"/>
+          <path d="M150 52 A30 30 0 0 1 175 44" fill="none" stroke="#a08b68" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+
+          <rect x="70" y="150" width="90" height="40" rx="6" fill="#2d2418" stroke="#161209" stroke-width="2.5" transform="rotate(4 115 170)"/>
+          <path d="M78 160 L150 168" stroke="#161209" stroke-width="1.5" opacity="0.5" transform="rotate(4 115 170)"/>
+
+          <ellipse cx="190" cy="140" rx="18" ry="26" fill="#5c3d5e" stroke="#341f36" stroke-width="2.5"/>
+          <ellipse cx="190" cy="135" rx="8" ry="11" fill="#8a6693" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="product-name">Aroma Conductor: Nocturne EDP</div>
+      <div class="product-meta">100ML</div>
+      <div class="product-price">$50.00</div>
+      <div class="notes-row">
+        <div>
+          <div class="layer-label">Top</div>
+          <div class="layer-items">Black Pepper · Bergamot</div>
+        </div>
+        <div>
+          <div class="layer-label">Mid</div>
+          <div class="layer-items">Oud · Dark Rose</div>
+        </div>
+        <div>
+          <div class="layer-label">Base</div>
+          <div class="layer-items">Sandalwood · Smoked Vanilla</div>
+        </div>
+      </div>
+      <button class="add-cart small" onclick="addToCart('nocturne-edp-100ml', 'Aroma Conductor: Nocturne EDP', 5000, '100ML')">Add to Cart</button>
+    </div>
+
+    <!-- Overture -->
+    <div class="product-card">
+      <div class="card-visual">
+        <svg viewBox="0 0 260 220" width="80%">
+          <circle cx="130" cy="110" r="105" fill="#eaf6f9" opacity="0.5"/>
+          <g fill="#7fb3c9" opacity="0.35">
+            <circle cx="30" cy="45" r="3.5"/>
+            <circle cx="228" cy="35" r="3"/>
+            <circle cx="20" cy="170" r="4"/>
+          </g>
+          <path d="M12 130 Q34 110 22 82" fill="none" stroke="#5da0b3" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+          <path d="M242 70 Q222 92 234 118" fill="none" stroke="#9dd3e0" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+          <circle cx="90" cy="80" r="48" fill="#8fc4d4" stroke="#4f8fa2" stroke-width="3"/>
+          <path d="M62 58 A44 44 0 0 1 96 44" fill="none" stroke="#d3edf3" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+
+          <circle cx="160" cy="65" r="38" fill="#bfe3ec" stroke="#6fabbc" stroke-width="3"/>
+          <path d="M138 47 A32 32 0 0 1 165 37" fill="none" stroke="#e6f5f9" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+
+          <ellipse cx="120" cy="150" rx="50" ry="24" fill="#4f8fa2" stroke="#2e6072" stroke-width="2.5" transform="rotate(-6 120 150)"/>
+          <ellipse cx="112" cy="144" rx="18" ry="8" fill="#9fd0dc" opacity="0.6" transform="rotate(-6 112 144)"/>
+
+          <ellipse cx="195" cy="130" rx="20" ry="26" fill="#a4d8e2" stroke="#5ba0b3" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="product-name">Aroma Conductor: Overture EDP</div>
+      <div class="product-meta">100ML</div>
+      <div class="product-price">$50.00</div>
+      <div class="notes-row">
+        <div>
+          <div class="layer-label">Top</div>
+          <div class="layer-items">Sea Salt · Grapefruit</div>
+        </div>
+        <div>
+          <div class="layer-label">Mid</div>
+          <div class="layer-items">Fig Leaf · Mint</div>
+        </div>
+        <div>
+          <div class="layer-label">Base</div>
+          <div class="layer-items">Driftwood · White Musk</div>
+        </div>
+      </div>
+      <button class="add-cart small" onclick="addToCart('overture-edp-100ml', 'Aroma Conductor: Overture EDP', 5000, '100ML')">Add to Cart</button>
+    </div>
+
+    <!-- Serenade -->
+    <div class="product-card">
+      <div class="card-visual">
+        <svg viewBox="0 0 260 220" width="80%">
+          <circle cx="140" cy="110" r="105" fill="#faedf4" opacity="0.5"/>
+          <g fill="#c98fb0" opacity="0.35">
+            <circle cx="30" cy="45" r="3.5"/>
+            <circle cx="230" cy="35" r="3"/>
+            <circle cx="20" cy="170" r="4"/>
+          </g>
+          <path d="M12 125 Q34 105 22 78" fill="none" stroke="#ba7ea3" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+          <path d="M245 75 Q225 97 237 122" fill="none" stroke="#e6b8d0" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+
+          <circle cx="95" cy="85" r="50" fill="#dba3c2" stroke="#93547a" stroke-width="3"/>
+          <path d="M66 62 A46 46 0 0 1 102 47" fill="none" stroke="#f5d9e8" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+
+          <circle cx="165" cy="65" r="36" fill="#f0cde3" stroke="#b884a6" stroke-width="3"/>
+          <path d="M144 48 A31 31 0 0 1 170 39" fill="none" stroke="#faeaf3" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+
+          <ellipse cx="130" cy="155" rx="46" ry="22" fill="#a8628a" stroke="#6e3a5a" stroke-width="2.5" transform="rotate(5 130 155)"/>
+          <ellipse cx="122" cy="149" rx="16" ry="7" fill="#d99ebf" opacity="0.6" transform="rotate(5 122 149)"/>
+
+          <circle cx="195" cy="130" r="20" fill="#e6bcd6" stroke="#a86994" stroke-width="2.5"/>
+          <circle cx="190" cy="125" r="8" fill="#f5dcec" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="product-name">Aroma Conductor: Serenade EDP</div>
+      <div class="product-meta">100ML</div>
+      <div class="product-price">$50.00</div>
+      <div class="notes-row">
+        <div>
+          <div class="layer-label">Top</div>
+          <div class="layer-items">Pink Pepper · Litchi</div>
+        </div>
+        <div>
+          <div class="layer-label">Mid</div>
+          <div class="layer-items">Peony · Jasmine</div>
+        </div>
+        <div>
+          <div class="layer-label">Base</div>
+          <div class="layer-items">Musk · Soft Suede</div>
+        </div>
+      </div>
+      <button class="add-cart small" onclick="addToCart('serenade-edp-100ml', 'Aroma Conductor: Serenade EDP', 5000, '100ML')">Add to Cart</button>
+    </div>
+
+  </div>
+
+  <footer class="footer" id="contact">
+    <div class="brand">Aroma Conductor</div>
+    <div class="footer-contact">
+      <div>✉ aromaconductor@gmail.com</div>
+      <div>☎ 027 457 5268</div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>

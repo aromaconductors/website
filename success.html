@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — Aroma Conductor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --cream: #ecdfc9;
+  --cream-deep: #e4d3b8;
+  --stone: #c7cacb;
+  --ink: #1c1a17;
+  --ink-soft: #3a362f;
+  --line: rgba(28,26,23,0.15);
+  --accent: #e8862f;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.55;
+}
+h1,h2,h3,.display{
+  font-family:'Poppins', sans-serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+a{color:inherit; text-decoration:none;}
+img,svg{display:block; max-width:100%;}
+
+/* NAV */
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:28px 48px;
+}
+.brand{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.3rem; letter-spacing:-0.01em;}
+.nav-links{display:flex; gap:36px; font-size:1rem;}
+.nav-links a{position:relative; padding-bottom:2px;}
+.nav-links a:hover{border-bottom:1px solid var(--ink);}
+.nav-links a.active{border-bottom:1px solid var(--ink);}
+.nav-cart{font-size:1rem;}
+
+/* HERO */
+.hero{padding:20px 48px 0; position:relative; overflow:hidden;}
+.hero h1{
+  font-size:clamp(2.6rem, 7vw, 5.6rem);
+  line-height:1.02;
+  text-align:center;
+  margin:20px 0 28px;
+}
+.hero-copy{
+  max-width:520px; margin:0 auto 40px; text-align:center;
+  font-size:1.15rem; color:var(--ink-soft);
+}
+
+/* FEATURED / BESTSELLER */
+.featured{
+  padding:20px 48px 90px;
+  max-width:1200px; margin:0 auto;
+}
+.featured-badge{
+  display:inline-block; background:var(--ink); color:var(--cream);
+  font-family:'Poppins',sans-serif; font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase;
+  padding:8px 16px; border-radius:999px; margin-bottom:28px;
+}
+.featured-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+}
+.featured-visual{display:flex; align-items:center; justify-content:center;}
+.featured-info .product-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:2rem; margin-bottom:6px;}
+.featured-info .product-meta{color:var(--ink-soft); margin-bottom:2px;}
+.featured-info .product-price{font-size:1.2rem; margin-top:8px; margin-bottom:24px;}
+.featured-info .product-desc{color:var(--ink-soft); margin-bottom:28px; max-width:440px;}
+
+.add-cart{
+  background:var(--ink); color:var(--cream);
+  border:none; border-radius:999px;
+  padding:16px 0; width:100%; max-width:300px;
+  font-family:'Inter', sans-serif; font-weight:600; font-size:1rem; letter-spacing:0.01em;
+  cursor:pointer; transition:transform .15s ease, opacity .15s ease;
+}
+.add-cart:hover{opacity:0.85; transform:translateY(-1px);}
+.add-cart.small{padding:12px 0; font-size:0.92rem; max-width:100%;}
+
+.notes-row{
+  display:flex; gap:48px; margin-top:32px; flex-wrap:wrap;
+}
+.layer-label{
+  font-family:'Poppins',sans-serif; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.layer-items{font-size:1rem;}
+
+/* SHOP LINK STRIP */
+.shop-cta{
+  text-align:center; padding:0 48px 90px;
+}
+.shop-cta a{
+  display:inline-block; border:1.5px solid var(--ink); border-radius:999px;
+  padding:14px 32px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.95rem;
+  transition:background .15s ease, color .15s ease;
+}
+.shop-cta a:hover{background:var(--ink); color:var(--cream);}
+
+/* ABOUT */
+.about{
+  background:var(--stone);
+  padding:90px 48px;
+  display:grid; grid-template-columns:0.9fr 1fr 1fr; gap:56px;
+  align-items:start;
+}
+.about h2{font-size:clamp(2rem, 3.6vw, 2.8rem); line-height:1.1;}
+.about p{font-size:1.05rem; color:var(--ink-soft); margin-bottom:14px;}
+.about a.learn-more{text-decoration:underline; color:var(--ink);}
+
+/* FOOTER */
+.footer{
+  background:var(--cream-deep);
+  padding:56px 48px;
+  display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
+  border-top:1px solid var(--line);
+}
+.footer .brand{font-size:1.4rem;}
+.footer-contact{text-align:right; font-size:1rem;}
+.footer-contact div{display:flex; align-items:center; gap:10px; justify-content:flex-end; margin-bottom:8px;}
+
+/* PRODUCTS GRID PAGE */
+.page-header{padding:60px 48px 20px; text-align:center;}
+.page-header h1{font-size:clamp(2.2rem, 5vw, 3.4rem); margin-bottom:14px;}
+.page-header p{color:var(--ink-soft); font-size:1.1rem; max-width:480px; margin:0 auto;}
+
+.products-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:36px;
+  max-width:1100px; margin:0 auto; padding:50px 48px 100px;
+}
+.product-card{
+  background:var(--cream-deep); border-radius:20px; padding:32px;
+  display:flex; flex-direction:column;
+}
+.product-card .card-visual{
+  height:200px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+}
+.product-card .product-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.25rem; margin-bottom:4px;}
+.product-card .product-meta{color:var(--ink-soft); font-size:0.95rem; margin-bottom:2px;}
+.product-card .product-price{font-size:1.05rem; margin:8px 0 14px;}
+.product-card .notes-row{gap:24px; margin-top:0; margin-bottom:20px; font-size:0.9rem;}
+
+@media (max-width:860px){
+  .nav{padding:22px 24px;}
+  .nav-links{gap:18px; font-size:0.9rem;}
+  .hero{padding:16px 24px 0;}
+  .featured{padding:10px 24px 60px;}
+  .featured-grid{grid-template-columns:1fr;}
+  .about{grid-template-columns:1fr; padding:60px 24px; gap:32px;}
+  .footer{padding:40px 24px; flex-direction:column; align-items:flex-start;}
+  .footer-contact{text-align:left;}
+  .footer-contact div{justify-content:flex-start;}
+  .products-grid{grid-template-columns:1fr; padding:40px 24px 70px;}
+  .page-header{padding:44px 24px 10px;}
+}
+
+
+/* CART PAGE */
+.cart-wrap{max-width:800px; margin:0 auto; padding:50px 48px 100px;}
+.cart-empty{text-align:center; padding:60px 24px; color:var(--ink-soft);}
+.cart-empty a{display:inline-block; margin-top:20px; border:1.5px solid var(--ink); border-radius:999px; padding:12px 28px; font-family:'Poppins',sans-serif; font-weight:600;}
+.cart-row{
+  display:grid; grid-template-columns:1fr auto auto auto; gap:20px; align-items:center;
+  padding:20px 0; border-bottom:1px solid var(--line);
+}
+.cart-row-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.05rem;}
+.cart-row-meta{color:var(--ink-soft); font-size:0.9rem; margin-top:2px;}
+.cart-row-qty{display:flex; align-items:center; gap:12px;}
+.cart-row-qty button{
+  width:28px; height:28px; border-radius:50%; border:1px solid var(--ink); background:none;
+  font-size:1rem; cursor:pointer; line-height:1;
+}
+.cart-row-qty button:hover{background:var(--ink); color:var(--cream);}
+.cart-row-price{font-weight:600; min-width:70px; text-align:right;}
+.cart-row-remove{
+  background:none; border:none; color:var(--ink-soft); text-decoration:underline;
+  font-family:'Inter',sans-serif; font-size:0.85rem; cursor:pointer;
+}
+.cart-summary{margin-top:32px; display:flex; flex-direction:column; align-items:flex-end; gap:16px;}
+.cart-subtotal-row{display:flex; gap:24px; font-size:1.2rem; align-items:baseline;}
+.cart-subtotal-row .label{color:var(--ink-soft); font-size:1rem;}
+#checkout-btn{max-width:280px;}
+@media (max-width:600px){
+  .cart-wrap{padding:36px 20px 70px;}
+  .cart-row{grid-template-columns:1fr; gap:8px;}
+  .cart-row-price{text-align:left;}
+}
+
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="brand"><a href="index.html">Aroma Conductor</a></div>
+    <div class="nav-links">
+      <a href="products.html">Shop</a>
+      <a href="index.html#about">About</a>
+    </div>
+    <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
+  </nav>
+
+  <div class="page-header" style="padding-top:100px;">
+    <h1>Thank You</h1>
+    <p>Your order is confirmed. A receipt has been sent to your email, and we'll be in touch about shipping soon.</p>
+  </div>
+
+  <div style="text-align:center; padding-bottom:100px;">
+    <a href="products.html" style="display:inline-block; border:1.5px solid var(--ink); border-radius:999px; padding:14px 32px; font-family:'Poppins',sans-serif; font-weight:600;">Continue Shopping</a>
+  </div>
+
+  <footer class="footer" id="contact">
+    <div class="brand">Aroma Conductor</div>
+    <div class="footer-contact">
+      <div>&#9993; aromaconductor@gmail.com</div>
+      <div>&#9742; 027 457 5268</div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    // Order succeeded — clear the cart.
+    localStorage.removeItem('aroma_conductor_cart');
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+  </script>
+</body>
+</html>
