@@ -4,289 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aroma Conductor — Be a Symphony</title>
+<meta name="description" content="Composed fragrances and bespoke scent design. 50ml eau de parfum, made in Aotearoa New Zealand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --cream: #ecdfc9;
-  --cream-deep: #e4d3b8;
-  --stone: #c7cacb;
-  --ink: #1c1a17;
-  --ink-soft: #3a362f;
-  --line: rgba(28,26,23,0.15);
-  --accent: #e8862f;
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{
-  font-family:'Inter', sans-serif;
-  color:var(--ink);
-  background:var(--cream);
-  line-height:1.55;
-}
-h1,h2,h3,.display{
-  font-family:'Poppins', sans-serif;
-  font-weight:600;
-  letter-spacing:-0.01em;
-}
-a{color:inherit; text-decoration:none;}
-img,svg{display:block; max-width:100%;}
-
-/* NAV */
-.nav{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:28px 48px;
-}
-.brand{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.3rem; letter-spacing:-0.01em;}
-.nav-links{display:flex; gap:36px; font-size:1rem;}
-.nav-links a{position:relative; padding-bottom:2px;}
-.nav-links a:hover{border-bottom:1px solid var(--ink);}
-.nav-links a.active{border-bottom:1px solid var(--ink);}
-.nav-cart{font-size:1rem;}
-
-/* HERO */
-.hero{padding:20px 48px 0; position:relative; overflow:hidden;}
-.hero h1{
-  font-size:clamp(2.6rem, 7vw, 5.6rem);
-  line-height:1.02;
-  text-align:center;
-  margin:20px 0 28px;
-}
-.hero-copy{
-  max-width:520px; margin:0 auto 40px; text-align:center;
-  font-size:1.15rem; color:var(--ink-soft);
-}
-
-/* FEATURED / BESTSELLER */
-.featured{
-  padding:20px 48px 90px;
-  max-width:1200px; margin:0 auto;
-}
-.featured-badge{
-  display:inline-block; background:var(--ink); color:var(--cream);
-  font-family:'Poppins',sans-serif; font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase;
-  padding:8px 16px; border-radius:999px; margin-bottom:28px;
-}
-.featured-grid{
-  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
-}
-.featured-visual{display:flex; align-items:center; justify-content:center;}
-.featured-info .product-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:2rem; margin-bottom:6px;}
-.featured-info .product-meta{color:var(--ink-soft); margin-bottom:2px;}
-.featured-info .product-price{font-size:1.2rem; margin-top:8px; margin-bottom:24px;}
-.featured-info .product-desc{color:var(--ink-soft); margin-bottom:28px; max-width:440px;}
-
-.add-cart{
-  background:var(--ink); color:var(--cream);
-  border:none; border-radius:999px;
-  padding:16px 0; width:100%; max-width:300px;
-  font-family:'Inter', sans-serif; font-weight:600; font-size:1rem; letter-spacing:0.01em;
-  cursor:pointer; transition:transform .15s ease, opacity .15s ease;
-}
-.add-cart:hover{opacity:0.85; transform:translateY(-1px);}
-.add-cart.small{padding:12px 0; font-size:0.92rem; max-width:100%;}
-
-.notes-row{
-  display:flex; gap:48px; margin-top:32px; flex-wrap:wrap;
-}
-.layer-label{
-  font-family:'Poppins',sans-serif; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
-  margin-bottom:6px;
-}
-.layer-items{font-size:1rem;}
-
-/* SHOP LINK STRIP */
-.shop-cta{
-  text-align:center; padding:0 48px 90px;
-}
-.shop-cta a{
-  display:inline-block; border:1.5px solid var(--ink); border-radius:999px;
-  padding:14px 32px; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.95rem;
-  transition:background .15s ease, color .15s ease;
-}
-.shop-cta a:hover{background:var(--ink); color:var(--cream);}
-
-/* ABOUT */
-.about{
-  background:var(--stone);
-  padding:90px 48px;
-  display:grid; grid-template-columns:0.9fr 1fr 1fr; gap:56px;
-  align-items:start;
-}
-.about h2{font-size:clamp(2rem, 3.6vw, 2.8rem); line-height:1.1;}
-.about p{font-size:1.05rem; color:var(--ink-soft); margin-bottom:14px;}
-.about a.learn-more{text-decoration:underline; color:var(--ink);}
-
-/* FOOTER */
-.footer{
-  background:var(--cream-deep);
-  padding:56px 48px;
-  display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
-  border-top:1px solid var(--line);
-}
-.footer .brand{font-size:1.4rem;}
-.footer-contact{text-align:right; font-size:1rem;}
-.footer-contact div{display:flex; align-items:center; gap:10px; justify-content:flex-end; margin-bottom:8px;}
-
-/* PRODUCTS GRID PAGE */
-.page-header{padding:60px 48px 20px; text-align:center;}
-.page-header h1{font-size:clamp(2.2rem, 5vw, 3.4rem); margin-bottom:14px;}
-.page-header p{color:var(--ink-soft); font-size:1.1rem; max-width:480px; margin:0 auto;}
-
-.products-grid{
-  display:grid; grid-template-columns:repeat(2, 1fr); gap:36px;
-  max-width:1100px; margin:0 auto; padding:50px 48px 100px;
-}
-.product-card{
-  background:var(--cream-deep); border-radius:20px; padding:32px;
-  display:flex; flex-direction:column;
-}
-.product-card .card-visual{
-  height:200px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;
-}
-.product-card .product-name{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.25rem; margin-bottom:4px;}
-.product-card .product-meta{color:var(--ink-soft); font-size:0.95rem; margin-bottom:2px;}
-.product-card .product-price{font-size:1.05rem; margin:8px 0 14px;}
-.product-card .notes-row{gap:24px; margin-top:0; margin-bottom:20px; font-size:0.9rem;}
-
-@media (max-width:860px){
-  .nav{padding:22px 24px;}
-  .nav-links{gap:18px; font-size:0.9rem;}
-  .hero{padding:16px 24px 0;}
-  .featured{padding:10px 24px 60px;}
-  .featured-grid{grid-template-columns:1fr;}
-  .about{grid-template-columns:1fr; padding:60px 24px; gap:32px;}
-  .footer{padding:40px 24px; flex-direction:column; align-items:flex-start;}
-  .footer-contact{text-align:left;}
-  .footer-contact div{justify-content:flex-start;}
-  .products-grid{grid-template-columns:1fr; padding:40px 24px 70px;}
-  .page-header{padding:44px 24px 10px;}
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <nav class="nav">
-    <div class="brand">Aroma Conductor</div>
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="Aroma Conductor monogram">
+      <span class="brand-name">Aroma Conductor</span>
+    </a>
     <div class="nav-links">
-      <a href="products.html">Shop</a>
+      <a href="products.html">The Collection</a>
+      <a href="custom.html">Create Your Own</a>
       <a href="#about">About</a>
     </div>
     <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
   </nav>
 
   <header class="hero">
-    <h1>BE A SYMPHONY</h1>
-    <p class="hero-copy">Explore our curated line of pioneering fragrances engineered to disrupt the status quo and evolve with you.</p>
+    <img class="hero-mark" src="assets/logo.jpg" alt="">
+    <h1>Be a Symphony</h1>
+    <p class="hero-copy">Four composed fragrances and a bespoke atelier. Every bottle is arranged note by note — top, mid and base — the way a conductor builds a score.</p>
+    <div class="hero-actions">
+      <a class="btn" href="products.html">Shop the Collection</a>
+      <a class="btn ghost" href="custom.html">Compose Your Own — $80</a>
+    </div>
+    <div class="hero-swatches" aria-hidden="true">
+      <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
+    </div>
   </header>
 
-  <section class="featured" id="shop">
-    <span class="featured-badge">Our Bestseller</span>
-    <div class="featured-grid">
-      <div class="featured-visual">
-        <svg viewBox="0 0 340 300" width="90%">
-          <!-- soft mist backdrop -->
-          <circle cx="175" cy="150" r="150" fill="#fdf7e8" opacity="0.5"/>
-
-          <!-- mist dots -->
-          <g fill="#f2b23c">
-            <circle cx="40" cy="60" r="4" opacity="0.35"/>
-            <circle cx="60" cy="230" r="5" opacity="0.3"/>
-            <circle cx="300" cy="50" r="3.5" opacity="0.4"/>
-            <circle cx="310" cy="220" r="4.5" opacity="0.3"/>
-            <circle cx="20" cy="150" r="3" opacity="0.4"/>
-          </g>
-          <g fill="#8fbf3f">
-            <circle cx="270" cy="30" r="3" opacity="0.4"/>
-            <circle cx="30" cy="100" r="4" opacity="0.3"/>
-            <circle cx="290" cy="170" r="3.5" opacity="0.35"/>
-          </g>
-          <g fill="#8b6fb5">
-            <circle cx="55" cy="40" r="3" opacity="0.35"/>
-            <circle cx="315" cy="130" r="4" opacity="0.3"/>
-            <circle cx="270" cy="260" r="3.5" opacity="0.3"/>
-          </g>
-
-          <!-- wisp trails -->
-          <path d="M15 190 Q45 170 30 140 Q18 115 45 100" fill="none" stroke="#e8b94a" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
-          <path d="M320 90 Q290 110 305 140 Q317 165 290 180" fill="none" stroke="#a084c9" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
-
-          <!-- lemon -->
-          <circle cx="90" cy="90" r="52" fill="#f5df5c" stroke="#d9be2e" stroke-width="3"/>
-          <path d="M60 65 A50 50 0 0 1 100 48" fill="none" stroke="#fbef9c" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
-
-          <!-- lime -->
-          <circle cx="172" cy="68" r="55" fill="#a4d15c" stroke="#6f9b2c" stroke-width="3"/>
-          <path d="M140 40 A52 52 0 0 1 185 25" fill="none" stroke="#cfe89a" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
-          <circle cx="172" cy="68" r="26" fill="none" stroke="#6f9b2c" stroke-width="1.5" opacity="0.5"/>
-
-          <!-- orange -->
-          <circle cx="252" cy="92" r="52" fill="#f5a641" stroke="#cf6f1c" stroke-width="3"/>
-          <path d="M222 65 A50 50 0 0 1 265 50" fill="none" stroke="#fbcf8f" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
-
-          <!-- leather swatch -->
-          <rect x="40" y="190" width="82" height="54" rx="6" fill="#a8794f" stroke="#6e4a2b" stroke-width="3" transform="rotate(-6 81 217)"/>
-          <path d="M50 200 L110 213" stroke="#6e4a2b" stroke-width="2" opacity="0.5" transform="rotate(-6 81 217)"/>
-          <path d="M48 216 L108 229" stroke="#6e4a2b" stroke-width="2" opacity="0.5" transform="rotate(-6 81 217)"/>
-
-          <!-- iris flower -->
-          <g>
-            <ellipse cx="170" cy="210" rx="20" ry="13" fill="#b18ed6" stroke="#6f4f9e" stroke-width="2" transform="rotate(-20 170 210)"/>
-            <ellipse cx="195" cy="222" rx="20" ry="13" fill="#c6a4dd" stroke="#6f4f9e" stroke-width="2" transform="rotate(15 195 222)"/>
-            <ellipse cx="182" cy="238" rx="20" ry="13" fill="#a67fcb" stroke="#6f4f9e" stroke-width="2" transform="rotate(90 182 238)"/>
-            <circle cx="183" cy="222" r="8" fill="#f2e06b" stroke="#c9ac1e" stroke-width="1.5"/>
-          </g>
-
-          <!-- wood sticks -->
-          <rect x="242" y="193" width="16" height="60" rx="7" fill="#b28455" stroke="#7a5836" stroke-width="2" transform="rotate(10 250 223)"/>
-          <rect x="272" y="198" width="16" height="55" rx="7" fill="#c19a68" stroke="#8a6947" stroke-width="2" transform="rotate(-8 280 226)"/>
-
-          <!-- extra clutter: tiny sparkles -->
-          <g stroke="#e8862f" stroke-width="1.5" opacity="0.5" stroke-linecap="round">
-            <path d="M255 20 L255 30 M250 25 L260 25"/>
-            <path d="M25 245 L25 253 M21 249 L29 249"/>
-          </g>
+  <!-- FEATURED -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-head">
+      <div class="eyebrow">Our Bestseller</div>
+      <h2>Ballad</h2>
+    </div>
+    <div class="custom-teaser">
+      <div class="teaser-visual">
+        <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Ballad">
+          <rect width="400" height="340" fill="#BEAFE0"/>
+          <path d="M0 250 Q100 190 200 250 T400 250" fill="none" stroke="#14131a" stroke-width="2"/>
+          <path d="M0 270 Q100 210 200 270 T400 270" fill="none" stroke="#14131a" stroke-width="1" opacity="0.45"/>
+          <polygon points="120,220 132,110 144,220" fill="#9F8BCE"/>
+          <polygon points="150,220 160,130 170,220" fill="#14131a"/>
+          <polygon points="176,220 188,95 200,220" fill="#9F8BCE"/>
+          <circle cx="132" cy="98" r="10" fill="#14131a"/>
+          <circle cx="160" cy="118" r="8" fill="#9F8BCE"/>
+          <circle cx="188" cy="83" r="10" fill="#14131a"/>
+          <rect x="250" y="120" width="56" height="56" transform="rotate(45 278 148)" fill="#F0D8A3" stroke="#14131a" stroke-width="2"/>
+          <circle cx="320" cy="80" r="26" fill="none" stroke="#14131a" stroke-width="2"/>
+          <circle cx="320" cy="80" r="12" fill="#FAFAF7"/>
         </svg>
       </div>
-      <div class="featured-info">
-        <div class="product-name">Aroma Conductor: Ballad EDP</div>
-        <div class="product-meta">50ML</div>
-        <div class="product-price">$75.00</div>
-        <p class="product-desc">Our most-loved composition — a bright citrus opening that settles into orris and lavender, grounded by warm leather and amber. The one people ask you about.</p>
-        <button class="add-cart" onclick="addToCart('ballad-edp-50ml', 'Aroma Conductor: Ballad EDP', 7500, '50ML')">Add to Cart</button>
-        <div class="notes-row">
-          <div>
-            <div class="layer-label">Top</div>
-            <div class="layer-items">Citrus Accord · Aldehyde</div>
-          </div>
-          <div>
-            <div class="layer-label">Mid</div>
-            <div class="layer-items">Orris · Champaca Leaf · Lavender</div>
-          </div>
-          <div>
-            <div class="layer-label">Base</div>
-            <div class="layer-items">Leather · Musk · Amber</div>
-          </div>
+      <div>
+        <div class="product-name" style="font-size:1.8rem;">Ballad — Eau de Parfum</div>
+        <div class="product-meta" style="max-width:280px;"><span>50ml</span><span class="product-price">$60.00</span></div>
+        <p class="product-desc" style="max-width:460px;">A slow love song of a scent. Cool peppermint and tangerine open onto honeyed lavender, soft rose and gentle spice, before resolving into a long, warm chord of vanilla, amber and vetiver.</p>
+        <div class="notes-list" style="max-width:460px;">
+          <div><span class="layer">Top</span><span>Peppermint · Tangerine · Cologne Accord</span></div>
+          <div><span class="layer">Mid</span><span>Lavender · Honey · Rose · Cinnamon · Cardamom</span></div>
+          <div><span class="layer">Base</span><span>Vanilla · Amber · Cedar · Vetiver</span></div>
         </div>
+        <button class="btn" onclick="addToCart('ballad-edp-50ml', 'Ballad — Eau de Parfum', 6000, '50ml')">Add to Cart — $60</button>
       </div>
     </div>
   </section>
 
-  <div class="shop-cta">
-    <a href="products.html">Shop the Full Collection</a>
-  </div>
-
-  <section class="about" id="about">
-    <h2>Why We Disrupt the Scent Space</h2>
-    <p>We're a collective of forward-thinking perfumers and chemists determined to pioneer the future of fragrance. Our lab blends artistry with breakthrough biotechnology to craft scents that evolve with your skin chemistry.</p>
-    <p>Challenging the status quo drives every formula, every bottle, every experience. Because tomorrow's fragrance shouldn't imitate yesterday—it should propel you into what's next. <a class="learn-more" href="#about">Learn More</a></p>
+  <!-- CUSTOM TEASER -->
+  <section class="section wash-sand" id="custom">
+    <div class="custom-teaser">
+      <div>
+        <div class="eyebrow">The Atelier</div>
+        <h2>Compose Your Own Scent</h2>
+        <p>Choose your ingredients — up to four top notes, six mid notes and four base notes — tell us how it should feel, and our perfumers arrange the rest with synthetics, accords and fixatives tuned to your taste. One bespoke 50ml bottle, $80.</p>
+        <a class="btn" href="custom.html">Start Composing</a>
+      </div>
+      <div class="teaser-visual">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Geometric triangles arranged like a rising scale">
+          <rect width="400" height="300" fill="none"/>
+          <line x1="20" y1="250" x2="380" y2="250" stroke="#14131a" stroke-width="2"/>
+          <polygon points="50,250 80,210 110,250" fill="#BAE0E8" stroke="#14131a" stroke-width="2"/>
+          <polygon points="120,250 155,185 190,250" fill="#BAE8BD" stroke="#14131a" stroke-width="2"/>
+          <polygon points="200,250 240,150 280,250" fill="#BEAFE0" stroke="#14131a" stroke-width="2"/>
+          <polygon points="290,250 335,105 380,250" fill="none" stroke="#14131a" stroke-width="2" stroke-dasharray="6 6"/>
+          <circle cx="335" cy="88" r="7" fill="#14131a"/>
+        </svg>
+      </div>
+    </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>Why We Conduct</h2>
+      </div>
+      <div>
+        <p>We're a small collective of perfumers and chemists who treat fragrance the way a conductor treats an orchestra: every ingredient is an instrument, and the composition only works when each one enters at the right moment.</p>
+        <p>Our formulas blend natural materials with modern aroma molecules so each scent evolves with your skin through the day — an opening movement, a middle, and a finish that lingers. Made in small batches in Aotearoa New Zealand.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-strip" aria-hidden="true">
+    <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
+  </div>
   <footer class="footer" id="contact">
-    <div class="brand">Aroma Conductor</div>
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="">
+      <span class="brand-name">Aroma Conductor</span>
+    </a>
     <div class="footer-contact">
-      <div>✉ aromaconductor@gmail.com</div>
-      <div>☎ 027 457 5268</div>
+      <div>aromaconductor@gmail.com</div>
+      <div>027 457 5268</div>
     </div>
   </footer>
 
