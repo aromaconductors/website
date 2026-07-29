@@ -1,53 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Confirmed — Aroma Conductor</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <img src="assets/logo-symbol.svg" alt="">
-      <span class="brand-name">Aroma Conductor</span>
-    </a>
-    <div class="nav-links">
-      <a href="products.html">The Collection</a>
-      <a href="custom.html">Create Your Own</a>
-      <a href="index.html#about">About</a>
-    </div>
-    <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
-  </nav>
-
-  <div class="success-wrap">
-    <img src="assets/logo.jpg" alt="" style="height:100px; margin:0 auto; mix-blend-mode:multiply;">
-    <h1>Order Confirmed</h1>
-    <p>Thank you — your payment went through and your order is now with us. A receipt from Stripe is on its way to your inbox. Bespoke scents take 2–3 weeks to compose before they ship.</p>
-    <a class="btn" href="index.html">Back to the Music</a>
-  </div>
-
-  <div class="footer-strip" aria-hidden="true">
-    <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
-  </div>
-  <footer class="footer">
-    <a class="brand" href="index.html">
-      <img src="assets/logo-symbol.svg" alt="">
-      <span class="brand-name">Aroma Conductor</span>
-    </a>
-    <div class="footer-contact">
-      <div>aromaconductor@gmail.com</div>
-      <div>027 457 5268</div>
-    </div>
-  </footer>
-
-  <script src="cart.js"></script>
-  <script>
-    // Payment succeeded — empty the cart.
-    document.addEventListener('DOMContentLoaded', clearCart);
-  </script>
-</body>
-</html>
+{
+  "name": "aroma-conductor",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "stripe": "^17.0.0"
+  }
+}
