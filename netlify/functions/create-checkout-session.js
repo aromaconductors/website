@@ -50,6 +50,7 @@ exports.handler = async (event) => {
       .forEach((item, i) => {
         const c = item.custom;
         metadata[`bespoke_${i + 1}`] = [
+          c.name ? `Name: ${c.name}` : '',
           `Top: ${(c.top || []).join(', ')}`,
           `Mid: ${(c.mid || []).join(', ')}`,
           `Base: ${(c.base || []).join(', ')}`,
