@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aroma Conductor — Be a Symphony</title>
-<meta name="description" content="Composed fragrances and bespoke scent design. 50ml eau de parfum, made in Aotearoa New Zealand.">
+<title>The Collection — Aroma Conductor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -17,104 +16,181 @@
       <span class="brand-name">Aroma Conductor</span>
     </a>
     <div class="nav-links">
-      <a href="products.html">The Collection</a>
+      <a href="products.html" class="active">The Collection</a>
       <a href="custom.html">Create Your Own</a>
-      <a href="#about">About</a>
+      <a href="index.html#about">About</a>
     </div>
     <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
   </nav>
 
-  <header class="hero">
-    <img class="hero-mark" src="assets/logo.jpg" alt="">
-    <h1>Be a Symphony</h1>
-    <p class="hero-copy">Four composed fragrances and a bespoke atelier. Every bottle is arranged note by note — top, mid and base — the way a conductor builds a score.</p>
-    <div class="hero-actions">
-      <a class="btn" href="products.html">Shop the Collection</a>
-      <a class="btn ghost" href="custom.html">Compose Your Own — $80</a>
-    </div>
-    <div class="hero-swatches" aria-hidden="true">
-      <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
-    </div>
-  </header>
+  <div class="page-header">
+    <h1>The Collection</h1>
+    <p>Four movements, one philosophy. Each eau de parfum is a 50ml composition — $60 per bottle.</p>
+  </div>
 
-  <!-- FEATURED -->
   <section class="section" style="padding-top:0;">
-    <div class="section-head">
-      <div class="eyebrow">Our Bestseller</div>
-      <h2>Ballad</h2>
-    </div>
-    <div class="custom-teaser">
-      <div class="teaser-visual">
-        <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Ballad">
-          <rect width="400" height="340" fill="#BEAFE0"/>
-          <path d="M0 250 Q100 190 200 250 T400 250" fill="none" stroke="#14131a" stroke-width="2"/>
-          <path d="M0 270 Q100 210 200 270 T400 270" fill="none" stroke="#14131a" stroke-width="1" opacity="0.45"/>
-          <polygon points="120,220 132,110 144,220" fill="#9F8BCE"/>
-          <polygon points="150,220 160,130 170,220" fill="#14131a"/>
-          <polygon points="176,220 188,95 200,220" fill="#9F8BCE"/>
-          <circle cx="132" cy="98" r="10" fill="#14131a"/>
-          <circle cx="160" cy="118" r="8" fill="#9F8BCE"/>
-          <circle cx="188" cy="83" r="10" fill="#14131a"/>
-          <rect x="250" y="120" width="56" height="56" transform="rotate(45 278 148)" fill="#F0D8A3" stroke="#14131a" stroke-width="2"/>
-          <circle cx="320" cy="80" r="26" fill="none" stroke="#14131a" stroke-width="2"/>
-          <circle cx="320" cy="80" r="12" fill="#FAFAF7"/>
-        </svg>
-      </div>
-      <div>
-        <div class="product-name" style="font-size:1.8rem;">Ballad — Eau de Parfum</div>
-        <div class="product-meta" style="max-width:280px;"><span>50ml</span><span class="product-price">$60.00</span></div>
-        <p class="product-desc" style="max-width:460px;">A slow love song of a scent. Cool peppermint and tangerine open onto honeyed lavender, soft rose and gentle spice, before resolving into a long, warm chord of vanilla, amber and vetiver.</p>
-        <div class="notes-list" style="max-width:460px;">
-          <div><span class="layer">Top</span><span>Peppermint · Tangerine · Cologne Accord</span></div>
-          <div><span class="layer">Mid</span><span>Lavender · Honey · Rose · Cinnamon · Cardamom</span></div>
-          <div><span class="layer">Base</span><span>Vanilla · Amber · Cedar · Vetiver</span></div>
+    <div class="products-grid">
+
+      <!-- CRESCENDO -->
+      <div class="product-card">
+        <div class="card-visual">
+          <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Crescendo: a crescendo mark building beneath a citrus sun">
+            <rect width="400" height="340" fill="#BAE0E8"/>
+            <!-- crescendo hairpin -->
+            <line x1="60" y1="190" x2="330" y2="120" stroke="#14131a" stroke-width="3"/>
+            <line x1="60" y1="190" x2="330" y2="260" stroke="#14131a" stroke-width="3"/>
+            <!-- rising bars inside the hairpin -->
+            <rect x="120" y="178" width="14" height="26" fill="#8FC6D2"/>
+            <rect x="160" y="168" width="14" height="48" fill="#14131a"/>
+            <rect x="200" y="158" width="14" height="70" fill="#8FC6D2"/>
+            <rect x="240" y="148" width="14" height="92" fill="#14131a"/>
+            <rect x="280" y="138" width="14" height="114" fill="#8FC6D2"/>
+            <!-- citrus sun -->
+            <circle cx="320" cy="70" r="34" fill="#F0D8A3" stroke="#14131a" stroke-width="2.5"/>
+            <line x1="320" y1="42" x2="320" y2="98" stroke="#14131a" stroke-width="1.5"/>
+            <line x1="292" y1="70" x2="348" y2="70" stroke="#14131a" stroke-width="1.5"/>
+            <line x1="300" y1="50" x2="340" y2="90" stroke="#14131a" stroke-width="1.5"/>
+            <line x1="340" y1="50" x2="300" y2="90" stroke="#14131a" stroke-width="1.5"/>
+            <!-- pepper dots -->
+            <circle cx="66" cy="120" r="5" fill="#14131a"/>
+            <circle cx="90" cy="96" r="4" fill="#14131a"/>
+            <circle cx="72" cy="72" r="3" fill="#14131a"/>
+          </svg>
         </div>
-        <button class="btn" onclick="addToCart('ballad-edp-50ml', 'Ballad — Eau de Parfum', 6000, '50ml')">Add to Cart — $60</button>
+        <div class="card-body">
+          <div class="product-name">Crescendo</div>
+          <span class="gender-tag">Unisex</span>
+          <div class="product-meta"><span>Eau de Parfum · 50ml</span><span class="product-price">$60.00</span></div>
+          <p class="product-desc">Starts quiet, finishes loud. A crack of black pepper over chilled, chrome-bright citrus builds through lavender, orris and champaca leaf into a full-volume base of leather, cedar and amber, worn by anyone who likes to make an entrance. For days that gather momentum.</p>
+          <div class="notes-list">
+            <div><span class="layer">Top</span><span>Black Pepper · Chrome Citrus · Tangerine</span></div>
+            <div><span class="layer">Mid</span><span>Lavender · Orris · Champaca Leaf</span></div>
+            <div><span class="layer">Base</span><span>Leather · Cedar · Amber · White Musk</span></div>
+          </div>
+          <button class="btn" onclick="addToCart('crescendo-edp-50ml', 'Crescendo — Eau de Parfum', 6000, '50ml')">Add to Cart</button>
+        </div>
       </div>
+
+      <!-- BALLAD -->
+      <div class="product-card">
+        <div class="card-visual">
+          <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Ballad: lavender spires over a slow melodic wave">
+            <rect width="400" height="340" fill="#BEAFE0"/>
+            <path d="M0 250 Q100 190 200 250 T400 250" fill="none" stroke="#14131a" stroke-width="2"/>
+            <path d="M0 270 Q100 210 200 270 T400 270" fill="none" stroke="#14131a" stroke-width="1" opacity="0.45"/>
+            <!-- lavender spires -->
+            <polygon points="120,220 132,110 144,220" fill="#9F8BCE"/>
+            <polygon points="150,220 160,130 170,220" fill="#14131a"/>
+            <polygon points="176,220 188,95 200,220" fill="#9F8BCE"/>
+            <circle cx="132" cy="98" r="10" fill="#14131a"/>
+            <circle cx="160" cy="118" r="8" fill="#9F8BCE"/>
+            <circle cx="188" cy="83" r="10" fill="#14131a"/>
+            <!-- honey diamond -->
+            <rect x="250" y="120" width="56" height="56" transform="rotate(45 278 148)" fill="#F0D8A3" stroke="#14131a" stroke-width="2"/>
+            <!-- vanilla ring -->
+            <circle cx="320" cy="80" r="26" fill="none" stroke="#14131a" stroke-width="2"/>
+            <circle cx="320" cy="80" r="12" fill="#FAFAF7"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="product-name">Ballad</div>
+          <span class="gender-tag">Unisex</span>
+          <div class="product-meta"><span>Eau de Parfum · 50ml</span><span class="product-price">$60.00</span></div>
+          <p class="product-desc">A soft unisex Eau de Parfum. Opening up with a cool peppermint and tangerine elegantly flowing into a honeyed lavender, soft rose with a range of warm spices, before settling into a warm base of vanilla and amber, grounded by a whisper of smoky vetiver. The one people lean in for.</p>
+          <div class="notes-list">
+            <div><span class="layer">Top</span><span>Peppermint · Tangerine · Cologne Accord</span></div>
+            <div><span class="layer">Mid</span><span>Lavender · Honey · Rose · Cinnamon · Cardamom</span></div>
+            <div><span class="layer">Base</span><span>Vanilla · Amber · Cedar · Vetiver</span></div>
+          </div>
+          <button class="btn" onclick="addToCart('ballad-edp-50ml', 'Ballad — Eau de Parfum', 6000, '50ml')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- CHORUS -->
+      <div class="product-card">
+        <div class="card-visual">
+          <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Chorus: a row of triangles singing in unison under radiating arcs">
+            <rect width="400" height="340" fill="#F0D8A3"/>
+            <!-- radiating citrus arcs -->
+            <path d="M60 90 A150 150 0 0 1 340 90" fill="none" stroke="#14131a" stroke-width="2"/>
+            <path d="M95 110 A115 115 0 0 1 305 110" fill="none" stroke="#14131a" stroke-width="1.5" opacity="0.6"/>
+            <path d="M130 130 A80 80 0 0 1 270 130" fill="none" stroke="#14131a" stroke-width="1" opacity="0.4"/>
+            <circle cx="200" cy="130" r="18" fill="#DDBC73" stroke="#14131a" stroke-width="2"/>
+            <!-- unison voices -->
+            <line x1="40" y1="260" x2="360" y2="260" stroke="#14131a" stroke-width="2"/>
+            <polygon points="60,260 85,195 110,260" fill="#14131a"/>
+            <polygon points="120,260 145,195 170,260" fill="#BEAFE0" stroke="#14131a" stroke-width="2"/>
+            <polygon points="180,260 205,195 230,260" fill="#14131a"/>
+            <polygon points="240,260 265,195 290,260" fill="#BAE8BD" stroke="#14131a" stroke-width="2"/>
+            <polygon points="300,260 325,195 350,260" fill="#14131a"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="product-name">Chorus</div>
+          <span class="gender-tag">Feminine</span>
+          <div class="product-meta"><span>Eau de Parfum · 50ml</span><span class="product-price">$60.00</span></div>
+          <p class="product-desc">A sunstruck female fragrance. A bright citrus opening of orange, bergamot and lemon lifts a centerpiece of jasmine, rose and lavender, softly transitioning into creamy sandalwood, patchouli and a sweet trace of vanilla. Effortless to wear, hard to forget.</p>
+          <div class="notes-list">
+            <div><span class="layer">Top</span><span>Orange · Bergamot · Lemon</span></div>
+            <div><span class="layer">Mid</span><span>Jasmine · Rose · Lavender</span></div>
+            <div><span class="layer">Base</span><span>Sandalwood · Patchouli · Vanilla · Cedar</span></div>
+          </div>
+          <button class="btn" onclick="addToCart('chorus-edp-50ml', 'Chorus — Eau de Parfum', 6000, '50ml')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- TEMPO -->
+      <div class="product-card">
+        <div class="card-visual">
+          <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Tempo: a metronome among pine triangles with a curl of smoke">
+            <rect width="400" height="340" fill="#BAE8BD"/>
+            <!-- pines -->
+            <polygon points="50,270 80,170 110,270" fill="#14131a"/>
+            <polygon points="95,270 120,200 145,270" fill="#8FD096"/>
+            <polygon points="290,270 320,180 350,270" fill="#8FD096"/>
+            <polygon points="330,270 352,215 374,270" fill="#14131a"/>
+            <line x1="30" y1="270" x2="370" y2="270" stroke="#14131a" stroke-width="2"/>
+            <!-- metronome -->
+            <polygon points="165,270 200,110 235,270" fill="#FAFAF7" stroke="#14131a" stroke-width="2.5"/>
+            <line x1="200" y1="252" x2="238" y2="140" stroke="#14131a" stroke-width="3"/>
+            <circle cx="238" cy="140" r="8" fill="#14131a"/>
+            <line x1="180" y1="200" x2="220" y2="200" stroke="#14131a" stroke-width="1.5"/>
+            <line x1="186" y1="170" x2="214" y2="170" stroke="#14131a" stroke-width="1.5"/>
+            <!-- smoke -->
+            <path d="M320 160 Q300 130 320 100 Q340 70 322 42" fill="none" stroke="#14131a" stroke-width="2" opacity="0.55"/>
+            <!-- berry dots -->
+            <circle cx="70" cy="120" r="6" fill="#14131a"/>
+            <circle cx="94" cy="102" r="4" fill="#8FD096" stroke="#14131a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="product-name">Tempo</div>
+          <span class="gender-tag">Masculine</span>
+          <div class="product-meta"><span>Eau de Parfum · 50ml</span><span class="product-price">$60.00</span></div>
+          <p class="product-desc">A masculine earthy fragrance introduced with gin-like lime and blackcurrant supported with aromatic undertones shift into a green driven base of galbanum and pine fostered by powdery iris with jasmine softening into a base of labdanum, tobacco, oakmoss, vetiver kissed by wood smoke. A forest with a pulse.</p>
+          <div class="notes-list">
+            <div><span class="layer">Top</span><span>Lime · Blackcurrant · Elemi · White Thyme · Coriander</span></div>
+            <div><span class="layer">Mid</span><span>Galbanum · Pine · Clove Leaf · Iris · Jasmine</span></div>
+            <div><span class="layer">Base</span><span>Labdanum · Tobacco · Oakmoss · Vetiver · Wood Smoke</span></div>
+          </div>
+          <button class="btn" onclick="addToCart('tempo-edp-50ml', 'Tempo — Eau de Parfum', 6000, '50ml')">Add to Cart</button>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CUSTOM TEASER -->
-  <section class="section wash-sand" id="custom">
-    <div class="custom-teaser">
-      <div>
-        <div class="eyebrow">The Atelier</div>
-        <h2>Compose Your Own Scent</h2>
-        <p>Choose your ingredients — up to four top notes, six mid notes and four base notes — tell us how it should feel, and our perfumers arrange the rest with synthetics, accords and fixatives tuned to your taste. One bespoke 50ml bottle, $80.</p>
-        <a class="btn" href="custom.html">Start Composing</a>
-      </div>
-      <div class="teaser-visual">
-        <svg viewBox="0 0 400 300" role="img" aria-label="Geometric triangles arranged like a rising scale">
-          <rect width="400" height="300" fill="none"/>
-          <line x1="20" y1="250" x2="380" y2="250" stroke="#14131a" stroke-width="2"/>
-          <polygon points="50,250 80,210 110,250" fill="#BAE0E8" stroke="#14131a" stroke-width="2"/>
-          <polygon points="120,250 155,185 190,250" fill="#BAE8BD" stroke="#14131a" stroke-width="2"/>
-          <polygon points="200,250 240,150 280,250" fill="#BEAFE0" stroke="#14131a" stroke-width="2"/>
-          <polygon points="290,250 335,105 380,250" fill="none" stroke="#14131a" stroke-width="2" stroke-dasharray="6 6"/>
-          <circle cx="335" cy="88" r="7" fill="#14131a"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="about-grid">
-      <div>
-        <div class="eyebrow">About</div>
-        <h2>Why We Conduct</h2>
-      </div>
-      <div>
-        <p>We're a small collective of perfumers and chemists who treat fragrance the way a conductor treats an orchestra: every ingredient is an instrument, and the composition only works when each one enters at the right moment.</p>
-        <p>Our formulas blend natural materials with modern aroma molecules so each scent evolves with your skin through the day — an opening movement, a middle, and a finish that lingers. Made in small batches in Aotearoa New Zealand.</p>
-      </div>
-    </div>
+  <!-- CUSTOM CTA -->
+  <section class="section wash-lilac" style="text-align:center;">
+    <div class="eyebrow">The Atelier</div>
+    <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:24px;">Nothing quite you? Compose your own.</h2>
+    <a class="btn" href="custom.html">Create Your Own Scent — $80</a>
   </section>
 
   <div class="footer-strip" aria-hidden="true">
     <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
   </div>
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <a class="brand" href="index.html">
       <img src="assets/logo-symbol.svg" alt="">
       <span class="brand-name">Aroma Conductor</span>

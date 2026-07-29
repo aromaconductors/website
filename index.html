@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Cart — Aroma Conductor</title>
+<title>Aroma Conductor — Be a Symphony</title>
+<meta name="description" content="Composed fragrances and bespoke scent design. 50ml eau de parfum, made in Aotearoa New Zealand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -18,45 +19,102 @@
     <div class="nav-links">
       <a href="products.html">The Collection</a>
       <a href="custom.html">Create Your Own</a>
-      <a href="index.html#about">About</a>
+      <a href="#about">About</a>
     </div>
     <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
   </nav>
 
-  <div class="page-header">
-    <h1>Your Cart</h1>
-  </div>
-
-  <div class="cart-wrap">
-    <div id="cart-empty" class="cart-empty" style="display:none;">
-      <p>Your cart is empty.</p>
-      <a href="products.html" class="btn ghost">Shop the Collection</a>
+  <header class="hero">
+    <img class="hero-mark" src="assets/logo.jpg" alt="">
+    <h1>Be a Symphony</h1>
+    <p class="hero-copy">Four composed fragrances and a bespoke atelier. Every bottle is arranged note by note — top, mid and base — the way a conductor builds a score.</p>
+    <div class="hero-actions">
+      <a class="btn" href="products.html">Shop the Collection</a>
+      <a class="btn ghost" href="custom.html">Compose Your Own — $80</a>
     </div>
-
-    <div id="cart-items"></div>
-
-    <div id="cart-summary" class="cart-summary">
-      <div class="summary-line">
-        <span class="label">Subtotal</span>
-        <span id="cart-subtotal">$0.00</span>
-      </div>
-      <div class="summary-line">
-        <span class="label">Shipping (flat rate)</span>
-        <span>$10.00</span>
-      </div>
-      <div class="summary-line total">
-        <span>Total</span>
-        <span id="cart-total">$0.00</span>
-      </div>
-      <button id="checkout-btn" class="btn full" onclick="checkout()">Checkout</button>
-      <p class="shipping-note">You'll enter your shipping address on the next step — payment is handled securely by Stripe.</p>
+    <div class="hero-swatches" aria-hidden="true">
+      <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
     </div>
-  </div>
+  </header>
+
+  <!-- FEATURED -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-head">
+      <div class="eyebrow">Our Bestseller</div>
+      <h2>Ballad</h2>
+    </div>
+    <div class="custom-teaser">
+      <div class="teaser-visual">
+        <svg viewBox="0 0 400 340" role="img" aria-label="Geometric artwork for Ballad">
+          <rect width="400" height="340" fill="#BEAFE0"/>
+          <path d="M0 250 Q100 190 200 250 T400 250" fill="none" stroke="#14131a" stroke-width="2"/>
+          <path d="M0 270 Q100 210 200 270 T400 270" fill="none" stroke="#14131a" stroke-width="1" opacity="0.45"/>
+          <polygon points="120,220 132,110 144,220" fill="#9F8BCE"/>
+          <polygon points="150,220 160,130 170,220" fill="#14131a"/>
+          <polygon points="176,220 188,95 200,220" fill="#9F8BCE"/>
+          <circle cx="132" cy="98" r="10" fill="#14131a"/>
+          <circle cx="160" cy="118" r="8" fill="#9F8BCE"/>
+          <circle cx="188" cy="83" r="10" fill="#14131a"/>
+          <rect x="250" y="120" width="56" height="56" transform="rotate(45 278 148)" fill="#F0D8A3" stroke="#14131a" stroke-width="2"/>
+          <circle cx="320" cy="80" r="26" fill="none" stroke="#14131a" stroke-width="2"/>
+          <circle cx="320" cy="80" r="12" fill="#FAFAF7"/>
+        </svg>
+      </div>
+      <div>
+        <div class="product-name" style="font-size:1.8rem;">Ballad — Eau de Parfum</div>
+        <div class="product-meta" style="max-width:280px;"><span>50ml</span><span class="product-price">$60.00</span></div>
+        <p class="product-desc" style="max-width:460px;">A slow love song of a scent. Cool peppermint and tangerine open onto honeyed lavender, soft rose and gentle spice, before resolving into a long, warm chord of vanilla, amber and vetiver.</p>
+        <div class="notes-list" style="max-width:460px;">
+          <div><span class="layer">Top</span><span>Peppermint · Tangerine · Cologne Accord</span></div>
+          <div><span class="layer">Mid</span><span>Lavender · Honey · Rose · Cinnamon · Cardamom</span></div>
+          <div><span class="layer">Base</span><span>Vanilla · Amber · Cedar · Vetiver</span></div>
+        </div>
+        <button class="btn" onclick="addToCart('ballad-edp-50ml', 'Ballad — Eau de Parfum', 6000, '50ml')">Add to Cart — $60</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM TEASER -->
+  <section class="section wash-sand" id="custom">
+    <div class="custom-teaser">
+      <div>
+        <div class="eyebrow">The Atelier</div>
+        <h2>Compose Your Own Scent</h2>
+        <p>Choose your ingredients — up to four top notes, six mid notes and four base notes — tell us how it should feel, and our perfumers arrange the rest with synthetics, accords and fixatives tuned to your taste. One bespoke 50ml bottle, $80.</p>
+        <a class="btn" href="custom.html">Start Composing</a>
+      </div>
+      <div class="teaser-visual">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Geometric triangles arranged like a rising scale">
+          <rect width="400" height="300" fill="none"/>
+          <line x1="20" y1="250" x2="380" y2="250" stroke="#14131a" stroke-width="2"/>
+          <polygon points="50,250 80,210 110,250" fill="#BAE0E8" stroke="#14131a" stroke-width="2"/>
+          <polygon points="120,250 155,185 190,250" fill="#BAE8BD" stroke="#14131a" stroke-width="2"/>
+          <polygon points="200,250 240,150 280,250" fill="#BEAFE0" stroke="#14131a" stroke-width="2"/>
+          <polygon points="290,250 335,105 380,250" fill="none" stroke="#14131a" stroke-width="2" stroke-dasharray="6 6"/>
+          <circle cx="335" cy="88" r="7" fill="#14131a"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>Why We Conduct</h2>
+      </div>
+      <div>
+        <p>We're a small collective of perfumers and chemists who treat fragrance the way a conductor treats an orchestra: every ingredient is an instrument, and the composition only works when each one enters at the right moment.</p>
+        <p>Our formulas blend natural materials with modern aroma molecules so each scent evolves with your skin through the day — an opening movement, a middle, and a finish that lingers. Made in small batches in Aotearoa New Zealand.</p>
+      </div>
+    </div>
+  </section>
 
   <div class="footer-strip" aria-hidden="true">
     <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
   </div>
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <a class="brand" href="index.html">
       <img src="assets/logo-symbol.svg" alt="">
       <span class="brand-name">Aroma Conductor</span>
@@ -68,80 +126,5 @@
   </footer>
 
   <script src="cart.js"></script>
-  <script>
-    function escapeHtml(str) {
-      const div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
-    }
-
-    function renderCartPage() {
-      const cart = getCart();
-      const container = document.getElementById('cart-items');
-      const emptyMsg = document.getElementById('cart-empty');
-      const summary = document.getElementById('cart-summary');
-      container.innerHTML = '';
-
-      if (cart.length === 0) {
-        emptyMsg.style.display = 'block';
-        summary.style.display = 'none';
-        return;
-      }
-
-      emptyMsg.style.display = 'none';
-      summary.style.display = 'flex';
-
-      let subtotal = 0;
-      cart.forEach((item) => {
-        subtotal += item.price * item.quantity;
-        const row = document.createElement('div');
-        row.className = 'cart-row';
-        row.innerHTML = `
-          <div>
-            <div class="cart-row-name">${escapeHtml(item.name)}</div>
-            <div class="cart-row-meta">${escapeHtml(item.meta || '')}</div>
-          </div>
-          <div class="cart-row-qty">
-            <button aria-label="Decrease quantity" onclick="updateQuantity('${item.id}', ${item.quantity - 1})">&minus;</button>
-            <span>${item.quantity}</span>
-            <button aria-label="Increase quantity" onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
-          </div>
-          <div class="cart-row-price">$${(item.price * item.quantity / 100).toFixed(2)}</div>
-          <button class="cart-row-remove" onclick="removeFromCart('${item.id}')">Remove</button>
-        `;
-        container.appendChild(row);
-      });
-
-      document.getElementById('cart-subtotal').textContent = `$${(subtotal / 100).toFixed(2)}`;
-      document.getElementById('cart-total').textContent = `$${((subtotal + SHIPPING_CENTS) / 100).toFixed(2)}`;
-    }
-
-    async function checkout() {
-      const cart = getCart();
-      if (cart.length === 0) return;
-      const btn = document.getElementById('checkout-btn');
-      btn.disabled = true;
-      btn.textContent = 'Redirecting to checkout…';
-      try {
-        const res = await fetch('/.netlify/functions/create-checkout-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ items: cart })
-        });
-        const data = await res.json();
-        if (data.url) {
-          window.location.href = data.url;
-        } else {
-          throw new Error(data.error || 'Checkout failed');
-        }
-      } catch (err) {
-        alert('Something went wrong starting checkout. Please try again.');
-        btn.disabled = false;
-        btn.textContent = 'Checkout';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', renderCartPage);
-  </script>
 </body>
 </html>
