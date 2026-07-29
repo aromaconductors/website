@@ -1,93 +1,182 @@
-// Runs on Netlify's servers — the Stripe SECRET key stays in an
-// environment variable (STRIPE_SECRET_KEY) and never reaches the browser.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Own Scent — Aroma Conductor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-symbol.svg" alt="">
+      <span class="brand-name">Aroma Conductor</span>
+    </a>
+    <div class="nav-links">
+      <a href="products.html">The Collection</a>
+      <a href="custom.html" class="active">Create Your Own</a>
+      <a href="index.html#about">About</a>
+    </div>
+    <div class="nav-cart"><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></div>
+  </nav>
 
-const SHIPPING_CENTS = 1000; // flat $10 shipping across the board
+  <div class="page-header">
+    <h1>Create Your Own Scent</h1>
+    <p>Select natural ingredients and scent descriptors to form the backbone of your creation. Our perfumers incorporate as many of your selections as possible, alongside synthetics, accords and fixatives, to curate a scent to your taste.</p>
+  </div>
 
-// Countries shown in Stripe's shipping address form.
-// Add or remove ISO country codes here to change where you ship.
-const SHIP_TO = ['NZ', 'AU', 'US', 'CA', 'GB', 'IE', 'SG', 'JP'];
+  <div class="custom-wrap">
 
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
-  }
+    <!-- TOP NOTES -->
+    <div class="form-block" style="--accent-wash:#BAE0E8;">
+      <div class="form-block-head">
+        <h3>Top Notes</h3>
+        <span class="limit">Select up to 4 · <span id="count-top">0</span>/4</span>
+      </div>
+      <p class="hint">The opening — what you smell first, bright and fleeting.</p>
+      <div class="check-grid" id="group-top"></div>
+    </div>
 
-  try {
-    const { items } = JSON.parse(event.body);
+    <!-- MID NOTES -->
+    <div class="form-block" style="--accent-wash:#BEAFE0;">
+      <div class="form-block-head">
+        <h3>Mid Notes</h3>
+        <span class="limit">Select up to 6 · <span id="count-mid">0</span>/6</span>
+      </div>
+      <p class="hint">The heart — the character that carries through the day.</p>
+      <div class="check-grid" id="group-mid"></div>
+    </div>
 
-    if (!items || !Array.isArray(items) || items.length === 0) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Cart is empty' }),
-      };
+    <!-- BASE NOTES -->
+    <div class="form-block" style="--accent-wash:#F0D8A3;">
+      <div class="form-block-head">
+        <h3>Base Notes</h3>
+        <span class="limit">Select up to 4 · <span id="count-base">0</span>/4</span>
+      </div>
+      <p class="hint">The foundation — deep, lasting, what lingers on skin.</p>
+      <div class="check-grid" id="group-base"></div>
+    </div>
+
+    <!-- DESCRIPTORS -->
+    <div class="form-block" style="--accent-wash:#BAE8BD;">
+      <div class="form-block-head">
+        <h3>Descriptors</h3>
+        <span class="limit">Choose at least 1</span>
+      </div>
+      <p class="hint">Let us know how you want your scent to feel.</p>
+      <div class="check-grid" id="group-desc"></div>
+    </div>
+
+    <!-- VISION -->
+    <div class="form-block">
+      <div class="form-block-head">
+        <h3>Your Vision</h3>
+        <span class="limit">Optional</span>
+      </div>
+      <p class="hint">For more accurate results, tell us the picture in your head — a place, a memory, a person, a mood.</p>
+      <textarea id="vision" maxlength="400" placeholder="e.g. Rain on hot pavement in early summer, something clean but a little smoky…"></textarea>
+    </div>
+
+    <!-- NAME -->
+    <div class="form-block">
+      <div class="form-block-head">
+        <h3>Name Your Creation</h3>
+        <span class="limit">Required</span>
+      </div>
+      <p class="hint">Give your bespoke cologne a name of its own.</p>
+      <input type="text" id="creation-name" maxlength="60" placeholder="e.g. Midnight Citrus">
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="custom-summary">
+      <div class="price-row">
+        <span>Bespoke Eau de Parfum · 50ml</span>
+        <span>$80.00</span>
+      </div>
+      <p class="shipping-note">Your selections travel with your order — our perfumers see them the moment you check out. Allow 2–3 weeks for composition.</p>
+      <p class="form-error" id="form-error">Please choose at least one top note, one mid note, one base note and one descriptor, and name your creation.</p>
+      <button class="btn full" onclick="addCustomToCart()">Add My Scent to Cart — $80</button>
+    </div>
+
+  </div>
+
+  <div class="footer-strip" aria-hidden="true">
+    <span class="wash-sky"></span><span class="wash-lilac"></span><span class="wash-sand"></span><span class="wash-mint"></span>
+  </div>
+  <footer class="footer">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-symbol.svg" alt="">
+      <span class="brand-name">Aroma Conductor</span>
+    </a>
+    <div class="footer-contact">
+      <div>aromaconductor@gmail.com</div>
+      <div>027 457 5268</div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    const INGREDIENTS = {
+      top: ['Apple','Bergamot','Black Pepper','Blood Orange','Dewberry','Elemi','Geranium','Ginger','Grapefruit','Juniper Berry','Lemon','Lime','Litsea Cubeba','Mango','Neroli','Orange Blossom','Peach','Peppermint','Pineapple','Raspberry','Rosemary','Strawberry'],
+      mid: ['Acacia','Broom','Caramel','Cardamom','Cassie','Champaca Leaf','Cherry','Cinnamon Leaf','Clove Leaf','Cocoa Butter','Coconut','Coffee','Frangipani','Freesia','Gardenia','Honey','Hyacinth','Iris','Jasmine','Lilac','Lily','Nut','Nutmeg','Orchid','Orris','Patchouli','Pine','Prune','Rose','Tuberose','Violet'],
+      base: ['Amber','Bois de Rose','Cedarwood','Frankincense','Labdanum','Leather','Oakmoss','Oud','Sandalwood','Tobacco','Tonka Bean','Vanilla','Vetiver','White Musk','White Oak','Wood Smoke'],
+      desc: ['Aromatic','Aquatic','Blue','Citrusy','Dark','Earthy','Floral','Fresh','Fresh Spice','Fruity','Gourmand','Green','Oriental','Powdery','Spicy','Sweet','Warm','Woody','Musky']
+    };
+    const LIMITS = { top: 4, mid: 6, base: 4, desc: Infinity };
+
+    function buildGroup(key) {
+      const wrap = document.getElementById('group-' + key);
+      INGREDIENTS[key].forEach((name) => {
+        const label = document.createElement('label');
+        label.innerHTML = `<input type="checkbox" value="${name}" data-group="${key}"><span>${name}</span>`;
+        wrap.appendChild(label);
+      });
+      wrap.addEventListener('change', () => enforceLimit(key));
     }
 
-    // Build Stripe line items. For bespoke scents, the customer's
-    // ingredient selections are attached as the product description
-    // so they show on the checkout page and in the Stripe dashboard.
-    const line_items = items.map((item) => {
-      const product_data = { name: item.name };
-      if (item.custom && item.meta) {
-        product_data.description = String(item.meta).slice(0, 500);
-      }
-      return {
-        price_data: {
-          currency: 'nzd',
-          product_data,
-          unit_amount: item.price,
-        },
-        quantity: item.quantity,
-      };
-    });
+    function selections(key) {
+      return [...document.querySelectorAll(`input[data-group="${key}"]:checked`)].map((i) => i.value);
+    }
 
-    // Also attach bespoke selections to the session's metadata so they
-    // appear on the payment record itself (Payments → click the payment).
-    const metadata = {};
-    items
-      .filter((item) => item.custom)
-      .forEach((item, i) => {
-        const c = item.custom;
-        metadata[`bespoke_${i + 1}`] = [
-          `Top: ${(c.top || []).join(', ')}`,
-          `Mid: ${(c.mid || []).join(', ')}`,
-          `Base: ${(c.base || []).join(', ')}`,
-          `Feel: ${(c.descriptors || []).join(', ')}`,
-          c.vision ? `Vision: ${c.vision}` : '',
-        ].filter(Boolean).join(' | ').slice(0, 500); // Stripe metadata values max 500 chars
+    function enforceLimit(key) {
+      const checked = selections(key).length;
+      const counter = document.getElementById('count-' + key);
+      if (counter) counter.textContent = checked;
+      const atLimit = checked >= LIMITS[key];
+      document.querySelectorAll(`input[data-group="${key}"]`).forEach((input) => {
+        if (!input.checked) input.disabled = atLimit;
       });
+    }
 
-    const siteUrl = process.env.URL || `https://${event.headers.host}`;
+    function addCustomToCart() {
+      const top = selections('top');
+      const mid = selections('mid');
+      const base = selections('base');
+      const desc = selections('desc');
+      const vision = document.getElementById('vision').value.trim();
+      const name = document.getElementById('creation-name').value.trim();
+      const error = document.getElementById('form-error');
 
-    const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
-      line_items,
-      metadata,
-      // Collect a shipping address in Stripe Checkout:
-      shipping_address_collection: { allowed_countries: SHIP_TO },
-      // Flat $10 shipping applied to every order:
-      shipping_options: [
-        {
-          shipping_rate_data: {
-            display_name: 'Standard Shipping',
-            type: 'fixed_amount',
-            fixed_amount: { amount: SHIPPING_CENTS, currency: 'nzd' },
-          },
-        },
-      ],
-      success_url: `${siteUrl}/success.html`,
-      cancel_url: `${siteUrl}/cart.html`,
-    });
+      if (!top.length || !mid.length || !base.length || !desc.length || !name) {
+        error.style.display = 'block';
+        error.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      error.style.display = 'none';
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ url: session.url }),
-    };
-  } catch (err) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: err.message }),
-    };
-  }
-};
+      const summary = `Name: ${name} | Top: ${top.join(', ')} | Mid: ${mid.join(', ')} | Base: ${base.join(', ')} | Feel: ${desc.join(', ')}` + (vision ? ` | Vision: ${vision}` : '');
+
+      // Unique id per composition so two different bespoke scents don't merge.
+      const id = 'custom-scent-' + Date.now();
+      addToCart(id, `${name} — Bespoke Eau de Parfum`, 8000, '50ml · ' + summary, { top, mid, base, descriptors: desc, vision, name });
+
+      window.location.href = 'cart.html';
+    }
+
+    ['top','mid','base','desc'].forEach(buildGroup);
+  </script>
+</body>
+</html>
